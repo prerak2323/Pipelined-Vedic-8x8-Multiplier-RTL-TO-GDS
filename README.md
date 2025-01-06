@@ -37,5 +37,13 @@ Ensure you have the following dependencies installed before running the flow:
 - Run static timing analysis using OpenSTA to ensure that the design meets the required timing constraints.
 - Estimate the power consumption of the design using OpenSTA.
 - Start Physical Design
-  1.
+  1. Define the floorplan for the design, which includes the distribution of cells, macro blocks, and core area.
+  2. Set up of power distribution network.
+  3. Perform global placement, where the cells are placed roughly in the layout based on the floorplan.
+  4. Refine the placement using detailed placement to optimize cell positions, taking into account timing, congestion, and other physical design constraints.
+  5. Perform clock tree synthesis (CTS) to insert clock buffers and ensure balanced clock delivery to all registers.
+  6. Perform final routing to connect all the cells using metal layers, ensuring that signal paths meet timing and physical design rules.
+- die_area {0 0 120 120}
+- core_area {10 10 110 110}
+- target_density 0.45 
 
