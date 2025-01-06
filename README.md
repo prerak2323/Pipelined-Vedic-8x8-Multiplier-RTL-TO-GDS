@@ -158,16 +158,21 @@ The **Routing Resources Analysis** and **Congestion Report** indicate that the p
 
 ---
 
-## Next Steps
 
-Once the routing is complete, the next steps involve:
+## Timing and Power Analysis
+### Worst Slack Analysis
+- **Worst Slack (min)**: 0.077
+- **Worst Slack (max)**: 6.970
 
-- **Finalizing the layout**: Ensure all design rules are met.
-- **Generating the GDS file**: Create the final GDS file for fabrication.
+### Total Negative Slack (TNS)
+- **TNS**: 0.000
 
----
-
-For more details on the specific steps, please refer to the [Physical Design](#physical-design) section of the repository.
+### Clock Skew Analysis
+- **Clock**: clk
+  - **Source Latency**: 0.078 _186_/CK ^
+  - **Target Latency**: -0.073 _165_/CK ^
+  - **CRPR**: 0.000
+  - **Setup Skew**: 0.005
 
 
 
