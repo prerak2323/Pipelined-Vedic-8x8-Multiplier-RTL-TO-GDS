@@ -175,5 +175,23 @@ The **Routing Resources Analysis** and **Congestion Report** indicate that the p
   - **Setup Skew**: 0.005
 
 
+### Power Breakdown Analysis
+| Group          | Internal Power | Switching Power | Leakage Power | Total Power (Watts) | Contribution (%) |
+|-----------------|-----------------|------------------|---------------|----------------------|-------------------|
+| Sequential      | 1.27e-04        | 2.67e-05         | 9.23e-06      | 1.63e-04             | 29.0%             |
+| Combinational   | 2.14e-04        | 9.98e-05         | 3.39e-05      | 3.48e-04             | 61.7%             |
+| Clock           | 2.23e-05        | 2.90e-05         | 1.26e-06      | 5.25e-05             | 9.3%              |
+| Macro           | 0.00e+00        | 0.00e+00         | 0.00e+00      | 0.00e+00             | 0.0%              |
+| Pad             | 0.00e+00        | 0.00e+00         | 0.00e+00      | 0.00e+00             | 0.0%              |
+| **Total**       | 3.64e-04        | 1.56e-04         | 4.44e-05      | 5.64e-04             | 100.0%            |
+
+### Inference:
+- **Combinational Power Dominance**: The combinational logic group consumes the majority of the power (61.7%), indicating a need for further optimization in this area, such as reducing switching activities and optimizing logic gates.
+- **Sequential and Clock Contributions**: Both sequential and clock-related elements contribute significantly, highlighting the importance of power-aware design techniques in flip-flops, latches, and clock tree structures.
+- **Macro and Pad Power**: These components contribute minimally, suggesting they are well-optimized or have negligible power contributions.
+- **Total Power Efficiency**: The total power consumption breakdown highlights areas where further power reduction efforts should be focused to improve overall design efficiency.
+
+
+
 
 
