@@ -42,6 +42,10 @@ Ensure you have the following dependencies installed before running the flow:
 - Run static timing analysis using OpenSTA to ensure that the design meets the required timing constraints.
 - Estimate the power consumption of the design using OpenSTA.
 - Start Physical Design
+
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/PLACEMENT_DENSITY.png">
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/SIGNAL_ROUTING.png">
+
   1. Define the floorplan for the design, which includes the distribution of cells, macro blocks, and core area.
   2. Set up of power distribution network.
   3. Perform global placement, where the cells are placed roughly in the layout based on the floorplan.
@@ -51,6 +55,10 @@ Ensure you have the following dependencies installed before running the flow:
 - die_area {0 0 120 120}
 - core_area {10 10 110 110}
 - target_density 0.45
+
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/FINAL_ROUTING.png">
+
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/POWER_GND_SIGNAL_CLK_ROUT.png">
 
 ## Directory Structure 
 
@@ -161,6 +169,8 @@ The **total wirelength** reflects the overall length of the interconnects requir
 
 The **Routing Resources Analysis** and **Congestion Report** indicate that the physical design has been effectively routed, with minimal congestion and efficient resource utilization. The design successfully meets the required constraints for routing, and the final **GDS** layout is expected to be manufacturable without any major routing issues.
 
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/ROUTING_DENSITY.png">
+
 ---
 
 
@@ -178,6 +188,9 @@ The **Routing Resources Analysis** and **Congestion Report** indicate that the p
   - **Target Latency**: -0.073 _165_/CK ^
   - **CRPR**: 0.000
   - **Setup Skew**: 0.005
+
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/POWER_EDNSITY.png">
+<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/CTS.png">
 
 
 ### Power Breakdown Analysis
