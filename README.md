@@ -20,3 +20,11 @@ The following open-source tools are used in this flow:
 5. [How to Run the Flow](#how-to-run-the-flow)
 6. [Results](#results)
 7. [Contributions](#contributions)
+
+## Project Setup
+
+Ensure you have the following dependencies installed before running the flow:
+
+- **Yosys**: Open-source synthesis tool.
+- **OpenSTA**: Static timing and power analysis tool.
+- **OpenROAD**: Tool for physical design and GDS generation.
