@@ -29,6 +29,26 @@ Ensure you have the following dependencies installed before running the flow:
 - **OpenROAD**: Tool for physical design and GDS generation.
 
 ## Flow OverviewStaged-Vedic-Multiplier-RTL-to-GDS
+
+- Write the RTL code in Verilog for the Staged Vedic Multiplier. This file is located in the rtl/ directory.
+- Develop a testbench to verify the functionality of the RTL design. This testbench is responsible for applying test vectors and checking the output.
+- Perform logic synthesis using the Nangate45_typ.lib technology library, with the help of constraints.sdc file. This converts the RTL code into a gate-level netlist.
+- Run Gate-Level Simulation (GLS) to ensure the synthesized design matches the functional behavior of the RTL.
+- Run static timing analysis using OpenSTA to ensure that the design meets the required timing constraints.
+- Estimate the power consumption of the design using OpenSTA.
+- Start Physical Design
+  1. Define the floorplan for the design, which includes the distribution of cells, macro blocks, and core area.
+  2. Set up of power distribution network.
+  3. Perform global placement, where the cells are placed roughly in the layout based on the floorplan.
+  4. Refine the placement using detailed placement to optimize cell positions, taking into account timing, congestion, and other physical design constraints.
+  5. Perform clock tree synthesis (CTS) to insert clock buffers and ensure balanced clock delivery to all registers.
+  6. Perform final routing to connect all the cells using metal layers, ensuring that signal paths meet timing and physical design rules.
+- die_area {0 0 120 120}
+- core_area {10 10 110 110}
+- target_density 0.45
+
+## Directory Structure 
+
 ├── rtl/                         
 │   ├── vedic8x8.v
 │   ├── vedic4x4.v
@@ -60,25 +80,5 @@ Ensure you have the following dependencies installed before running the flow:
 ├── scripts/                       
 │   ├── gcd_nangate45_copt.tcl          
 └── README.md                      
-
-
-- Write the RTL code in Verilog for the Staged Vedic Multiplier. This file is located in the rtl/ directory.
-- Develop a testbench to verify the functionality of the RTL design. This testbench is responsible for applying test vectors and checking the output.
-- Perform logic synthesis using the Nangate45_typ.lib technology library, with the help of constraints.sdc file. This converts the RTL code into a gate-level netlist.
-- Run Gate-Level Simulation (GLS) to ensure the synthesized design matches the functional behavior of the RTL.
-- Run static timing analysis using OpenSTA to ensure that the design meets the required timing constraints.
-- Estimate the power consumption of the design using OpenSTA.
-- Start Physical Design
-  1. Define the floorplan for the design, which includes the distribution of cells, macro blocks, and core area.
-  2. Set up of power distribution network.
-  3. Perform global placement, where the cells are placed roughly in the layout based on the floorplan.
-  4. Refine the placement using detailed placement to optimize cell positions, taking into account timing, congestion, and other physical design constraints.
-  5. Perform clock tree synthesis (CTS) to insert clock buffers and ensure balanced clock delivery to all registers.
-  6. Perform final routing to connect all the cells using metal layers, ensuring that signal paths meet timing and physical design rules.
-- die_area {0 0 120 120}
-- core_area {10 10 110 110}
-- target_density 0.45
-
-## Directory Structure 
 
 
