@@ -82,7 +82,7 @@ Staged-Vedic-Multiplier-RTL-to-GDS
 ├── scripts/                       # TCL automation scripts for flow
 │   ├── gcd_nangate45_copt.tcl     # Optimization script for Nangate45 library
 └── README.md
-
+```
 ## Routing Resources Analysis and Congestion Report
 
 In this section, we summarize the **Routing Resources Analysis** and **Congestion Report** for the physical design of the **Staged Vedic Multiplier**.
