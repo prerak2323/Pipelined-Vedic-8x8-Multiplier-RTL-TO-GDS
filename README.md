@@ -1,1 +1,1 @@
-# Staged Vedic Multiplier - RTL to GDS Flow
+# Pipelned Vedic Multiplier - RTL to GDS Flow
