@@ -1,5 +1,5 @@
 # Pipelned Vedic Multiplier - RTL to GDS Flow
-This repository contains the design and implementation of a **Staged Vedic Multiplier**, a high-performance multiplier based on Vedic mathematics optimized for modern digital design flows. The project demonstrates the **RTL to GDS** flow, automating the essential steps in logic synthesis, timing analysis, power estimation, and physical design using a combination of open-source tools.
+This repository contains the design and implementation of a **Staged Vedic Multiplier** with throughput of 100000 OPS, a high-performance multiplier based on Vedic mathematics optimized for modern digital design flows. The project demonstrates the **RTL to GDS** flow, automating the essential steps in logic synthesis, timing analysis, power estimation, and physical design using a combination of open-source tools.
 
 ## Project Overview
 
