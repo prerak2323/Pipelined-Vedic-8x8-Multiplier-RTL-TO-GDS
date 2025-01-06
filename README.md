@@ -28,7 +28,39 @@ Ensure you have the following dependencies installed before running the flow:
 - **OpenSTA**: Static timing and power analysis tool.
 - **OpenROAD**: Tool for physical design and GDS generation.
 
-## Flow Overview
+## Flow OverviewStaged-Vedic-Multiplier-RTL-to-GDS
+├── rtl/                         
+│   ├── vedic8x8.v
+│   ├── vedic4x4.v
+│   ├── vedic2x2v
+│   ├── csa4.v
+│   ├── csa8.v
+│   ├── FullAdder.v
+│   ├── HalfAdder.v
+├── testbench/                    
+│   ├── tb.v     
+├── synthesis/                    
+│   ├── opt.tcl          
+│   ├── constraints.sdc           
+│   ├── netlist_opt_synthesised.v     
+├── timing_analysis/              
+│   ├── vedic8x8_sta.txt        
+├── power_analysis/               
+│   ├── vedic8x8_sta.txt          
+├── physical_design/Nangate45              
+│   ├── gcd_nangate45_copy.tcl
+│   ├── flow_floorpla.tcl
+│   ├── flow_pdn.tcl
+│   ├── flow_global_placement.tcl             
+│   ├── flow_detailed_placement.tcl  
+│   ├── flow_cts.tcl
+│   ├── flow.tcl
+│   ├── GDS
+│   ├── results
+├── scripts/                       
+│   ├── gcd_nangate45_copt.tcl          
+└── README.md                      
+
 
 - Write the RTL code in Verilog for the Staged Vedic Multiplier. This file is located in the rtl/ directory.
 - Develop a testbench to verify the functionality of the RTL design. This testbench is responsible for applying test vectors and checking the output.
@@ -45,5 +77,8 @@ Ensure you have the following dependencies installed before running the flow:
   6. Perform final routing to connect all the cells using metal layers, ensuring that signal paths meet timing and physical design rules.
 - die_area {0 0 120 120}
 - core_area {10 10 110 110}
-- target_density 0.45 
+- target_density 0.45
+
+## Directory Structure 
+
 
