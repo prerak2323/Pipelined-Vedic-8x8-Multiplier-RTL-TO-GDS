@@ -49,36 +49,38 @@ Ensure you have the following dependencies installed before running the flow:
 
 ## Directory Structure 
 
-├── rtl/                         
-│   ├── vedic8x8.v
-│   ├── vedic4x4.v
-│   ├── vedic2x2v
-│   ├── csa4.v
-│   ├── csa8.v
-│   ├── FullAdder.v
-│   ├── HalfAdder.v
-├── testbench/                    
-│   ├── tb.v     
-├── synthesis/                    
-│   ├── opt.tcl          
-│   ├── constraints.sdc           
-│   ├── netlist_opt_synthesised.v     
-├── timing_analysis/              
-│   ├── vedic8x8_sta.txt        
-├── power_analysis/               
-│   ├── vedic8x8_sta.txt          
-├── physical_design/Nangate45              
-│   ├── gcd_nangate45_copy.tcl
-│   ├── flow_floorpla.tcl
-│   ├── flow_pdn.tcl
-│   ├── flow_global_placement.tcl             
-│   ├── flow_detailed_placement.tcl  
-│   ├── flow_cts.tcl
-│   ├── flow.tcl
-│   ├── GDS
-│   ├── results
-├── scripts/                       
-│   ├── gcd_nangate45_copt.tcl          
-└── README.md                      
+```plaintext
+Staged-Vedic-Multiplier-RTL-to-GDS
+├── rtl/                          # RTL (Verilog) files for the multiplier design
+│   ├── vedic8x8.v                # 8x8 Vedic multiplier module
+│   ├── vedic4x4.v                # 4x4 Vedic multiplier module
+│   ├── vedic2x2.v                # 2x2 Vedic multiplier module
+│   ├── csa4.v                    # 4-bit Carry Save Adder
+│   ├── csa8.v                    # 8-bit Carry Save Adder
+│   ├── FullAdder.v               # Full adder module
+│   ├── HalfAdder.v               # Half adder module
+├── testbench/                    # Testbench files for RTL verification
+│   ├── tb.v                      # Testbench for Vedic multiplier
+├── synthesis/                    # Synthesis scripts and outputs
+│   ├── opt.tcl                   # Synthesis optimization script
+│   ├── constraints.sdc           # SDC constraints file for synthesis
+│   ├── netlist_opt_synthesised.v  # Optimized synthesized netlist
+├── timing_analysis/              # Timing analysis reports
+│   ├── vedic8x8_sta.txt          # Timing analysis report for 8x8 multiplier
+├── power_analysis/               # Power analysis reports
+│   ├── vedic8x8_sta.txt          # Power estimation for 8x8 multiplier
+├── physical_design/Nangate45     # Physical design scripts and results
+│   ├── gcd_nangate45_copy.tcl     # Nangate45 process library setup script
+│   ├── flow_floorplan.tcl        # Floorplan definition script
+│   ├── flow_pdn.tcl              # Power Distribution Network (PDN) script
+│   ├── flow_global_placement.tcl # Global placement script
+│   ├── flow_detailed_placement.tcl # Detailed placement script
+│   ├── flow_cts.tcl              # Clock Tree Synthesis (CTS) script
+│   ├── flow.tcl                  # Main physical design flow script
+│   ├── GDS                       # Folder containing the final GDS file
+│   ├── results                   # Folder containing intermediate results
+├── scripts/                       # TCL automation scripts for flow
+│   ├── gcd_nangate45_copt.tcl     # Optimization script for Nangate45 library
+└── README.md              
 
 
