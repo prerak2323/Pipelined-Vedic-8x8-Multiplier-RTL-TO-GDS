@@ -1,1 +1,1 @@
-# 3-Stage-Pipelined-Vedic-8x8-Multiplier
+# Staged Vedic Multiplier - RTL to GDS Flow
