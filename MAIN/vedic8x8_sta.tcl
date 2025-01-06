@@ -1,0 +1,5 @@
+read_liberty Nangate45/Nangate45_typ.lib
+read_verilog netlist_final_opt.v
+link_design vedic8x8
+read_sdc constrains.sdc
+report_checks
