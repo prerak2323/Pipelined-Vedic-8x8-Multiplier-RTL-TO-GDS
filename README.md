@@ -14,8 +14,7 @@ The following open-source tools are used in this flow:
 ## Table of Contents
 
 1. [Project Setup](#project-setup)
-2. [Tools Used](#tools-used)
-3. [Flow Overview](#flow-overview)
+2. [Flow Overview](#flow-overview)
 4. [Directory Structure](#directory-structure)
 5. [How to Run the Flow](#how-to-run-the-flow)
 6. [Results](#results)
@@ -28,3 +27,15 @@ Ensure you have the following dependencies installed before running the flow:
 - **Yosys**: Open-source synthesis tool.
 - **OpenSTA**: Static timing and power analysis tool.
 - **OpenROAD**: Tool for physical design and GDS generation.
+
+## Flow Overview
+
+- Write the RTL code in Verilog for the Staged Vedic Multiplier. This file is located in the rtl/ directory.
+- Develop a testbench to verify the functionality of the RTL design. This testbench is responsible for applying test vectors and checking the output.
+- Perform logic synthesis using the Nangate45_typ.lib technology library, with the help of constraints.sdc file. This converts the RTL code into a gate-level netlist.
+- Run Gate-Level Simulation (GLS) to ensure the synthesized design matches the functional behavior of the RTL.
+- Run static timing analysis using OpenSTA to ensure that the design meets the required timing constraints.
+- Estimate the power consumption of the design using OpenSTA.
+- Start Physical Design
+  1.
+
