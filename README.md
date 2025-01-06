@@ -3,7 +3,7 @@ This repository contains the design and implementation of a **Staged Vedic Multi
 
 ## Project Overview
 
-The project involves creating a **Staged Vedic Multiplier** and executing it through the full **RTL-to-GDS** flow. The steps include **RTL coding**, **functional verification**, **synthesis**, **timing and power analysis**, and **physical design** (including floorplanning, placement, and routing).
+The project involves creating a **Staged Vedic Multiplier** and executing it through the full **RTL-to-GDS** flow. The steps include **RTL coding**, **functional verification**, **synthesis**, **timing and power analysis**, and **physical design** (including floorplanning, placement, clock tree synthesis, routing).
 
 The following open-source tools are used in this flow:
 - **Yosys** for **Logic Synthesis**
