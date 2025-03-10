@@ -3,7 +3,7 @@ This repository contains the design and implementation of a **Staged Vedic Multi
 
 ## BLock Diagram & RTL Simulation
 <img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/BLOCK_DIAGRAM.png">
-<img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/RTL_SIMULATION.png" >
+
 
 ## Project Overview
 
@@ -15,15 +15,6 @@ The following open-source tools are used in this flow:
 - **OpenROAD** for **Physical Design and Layout**
 - **TCL Scripts** for **Flow Automation**
 
-
-## Table of Contents
-
-1. [Project Setup](#project-setup)
-2. [Flow Overview](#flow-overview)
-4. [Directory Structure](#directory-structure)
-5. [How to Run the Flow](#how-to-run-the-flow)
-6. [Results](#results)
-7. [Contributions](#contributions)
 
 ## Project Setup
 
@@ -96,84 +87,10 @@ Staged-Vedic-Multiplier-RTL-to-GDS
 │   ├── gcd_nangate45_copt.tcl     # Optimization script for Nangate45 library
 └── README.md
 ```
-## Routing Resources Analysis and Congestion Report
-
-In this section, we summarize the **Routing Resources Analysis** and **Congestion Report** for the physical design of the **Staged Vedic Multiplier**.
-
-### Routing Resources Analysis
-
-During the routing stage of the design, the routing resources (i.e., metal layers) are analyzed to determine how efficiently the routing is distributed across different metal layers.
-
-#### Routing Resource Distribution
-The following table summarizes the analysis of routing resources for each metal layer, including the **original** resource count, the **derated** resource count, and the **reduction percentage**:
-
-| Layer  | Direction  | Original Resources | Derated Resources | Reduction (%) |
-|--------|------------|--------------------|-------------------|---------------|
-| **metal1** | Horizontal | 0  | 0   | 0.00%  |
-| **metal2** | Vertical   | 35,796 | 15,968 | 55.39% |
-| **metal3** | Horizontal | 48,849 | 22,400 | 54.14% |
-| **metal4** | Vertical   | 22,800 | 9,446  | 58.57% |
-| **metal5** | Horizontal | 22,800 | 9,627  | 57.78% |
-| **metal6** | Vertical   | 22,800 | 9,626  | 57.78% |
-| **metal7** | Horizontal | 6,555  | 3,057  | 53.36% |
-| **metal8** | Vertical   | 6,555  | 3,192  | 51.30% |
-| **metal9** | Horizontal | 3,249  | 3,136  | 3.48%  |
-| **metal10** | Vertical  | 3,249  | 3,136  | 3.48%  |
-
-This table indicates that the design uses **multiple metal layers** for routing, with a notable **reduction in the number of resources** in the **derated** columns, which corresponds to efficient utilization of available resources.
-
-#### Via Usage
-
-- **Total number of vias related to pin nodes**: 6,387
-- **Total number of vias related to Steiner nodes**: 112
-- **Final number of vias**: 7,934
-- **Total 3D via usage**: 29,598
-
-The number of vias required in the design is significant, with the majority of vias being related to pin nodes, ensuring the design's connectivity across the layout. The 3D via usage metric represents the total via resources consumed during routing.
-
----
-
-### Final Congestion Report
-
-Congestion is a critical factor in ensuring that the physical design of the circuit can be effectively manufactured. A congestion report provides insights into the usage of the routing resources on each layer.
-
-#### Congestion Analysis for Routing Layers
-
-The table below summarizes the **congestion report** across different metal layers, showing the **resource usage** (in percentage), **demand**, and **overflow** (if any):
-
-| Layer  | Resource   | Demand  | Usage (%) | Max H / Max V / Total Overflow |
-|--------|------------|---------|-----------|--------------------------------|
-| **metal1** | 0        | 0       | 0.00%     | 0 / 0 / 0                      |
-| **metal2** | 15,968   | 2,630   | 16.47%    | 0 / 0 / 0                      |
-| **metal3** | 22,400   | 2,974   | 13.28%    | 0 / 0 / 0                      |
-| **metal4** | 9,446    | 79      | 0.84%     | 0 / 0 / 0                      |
-| **metal5** | 9,627    | 0       | 0.00%     | 0 / 0 / 0                      |
-| **metal6** | 9,626    | 62      | 0.64%     | 0 / 0 / 0                      |
-| **metal7** | 3,057    | 51      | 1.67%     | 0 / 0 / 0                      |
-| **metal8** | 3,192    | 0       | 0.00%     | 0 / 0 / 0                      |
-| **metal9** | 3,136    | 0       | 0.00%     | 0 / 0 / 0                      |
-| **metal10** | 3,136   | 0       | 0.00%     | 0 / 0 / 0                      |
-
-The **maximum overflow** values for each layer are **0**, indicating that there are no issues with congestion on the metal layers, and the routing has been effectively distributed. The usage percentage across the layers is relatively low, indicating a well-balanced design.
-
-#### Total Wirelength and Routed Nets
-
-- **Total wirelength**: 17,892 µm
-- **Total routed nets**: 1,085
-
-The **total wirelength** reflects the overall length of the interconnects required for the design, and the number of **routed nets** shows the number of individual signals that were successfully routed in the design. These values are essential for estimating the performance and area of the final chip.
-
----
-
-## Conclusion
-
-The **Routing Resources Analysis** and **Congestion Report** indicate that the physical design has been effectively routed, with minimal congestion and efficient resource utilization. The design successfully meets the required constraints for routing, and the final **GDS** layout is expected to be manufacturable without any major routing issues.
 
 <img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/ROUTING_DENSITY.png">
 
 ---
-
-
 ## Timing and Power Analysis
 ### Worst Slack Analysis
 - **Worst Slack (min)**: 0.077
@@ -181,13 +98,6 @@ The **Routing Resources Analysis** and **Congestion Report** indicate that the p
 
 ### Total Negative Slack (TNS)
 - **TNS**: 0.000
-
-### Clock Skew Analysis
-- **Clock**: clk
-  - **Source Latency**: 0.078 _186_/CK ^
-  - **Target Latency**: -0.073 _165_/CK ^
-  - **CRPR**: 0.000
-  - **Setup Skew**: 0.005
 
 <img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/POWER_EDNSITY.png">
 <img src="https://github.com/prerak2323/Pipelined-Vedic-8x8-Multiplier-RTL-TO-GDS/blob/main/MAIN/GDS/CTS.png">
